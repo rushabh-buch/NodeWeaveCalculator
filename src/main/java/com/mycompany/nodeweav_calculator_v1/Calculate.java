@@ -187,13 +187,14 @@ public class Calculate extends HttpServlet {
     }
     
     private void setSqrt(){
+        builder.append(numberappender.toString());
+        numberappender = new StringBuilder();
         updateResult(calculateroot());
     }
     
     private void setEquals(HttpServletResponse response){
         builder.append(numberappender.toString());
         
-//        Cookie ck = new Cookie("NetweadCalculatorLast",builder.toString());
         Cookie ck = new Cookie("NetweadCalculatorLast",builder.toString());
         response.addCookie(ck);
         
@@ -235,8 +236,8 @@ public class Calculate extends HttpServlet {
     
     private String calculateroot(){
         
-        String root = Double.toString(Math.sqrt(Double.parseDouble(numberappender.toString())));
-        numberappender = new StringBuilder();
+        String root = Double.toString(Math.sqrt(Double.parseDouble(builder.toString())));
+        builder = new StringBuilder();
         builder.append(root);
         return String.format("%.2f", Double.parseDouble(root));
     }
