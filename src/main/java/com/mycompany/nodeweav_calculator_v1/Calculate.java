@@ -115,46 +115,61 @@ public class Calculate extends HttpServlet {
 
     
     private void setZero() {
-        addSymbol("0");
+        if(numberappender.length()<9)
+            addSymbol("0");
     }
 
     private void setOne() {
-        addSymbol("1");
+        if(numberappender.length()<9)
+            addSymbol("1");
     }
 
     private void setTwo() {
-        addSymbol("2");
+        if(numberappender.length()<9)
+            addSymbol("2");
     }
 
     private void setThree() {
-        addSymbol("3");
+        if((numberappender.toString().contains(".")) || (numberappender.length()<9)){
+                addSymbol("3");
+        }
+            
     }
 
     private void setFour() {
-        addSymbol("4");
+        if(numberappender.length()<9)
+            addSymbol("4");
     }
 
     private void setFive() {
-        addSymbol("5");
+        if(numberappender.length()<9)
+            addSymbol("5");
     }
 
     private void setSix() {
-        addSymbol("6");
+        if(numberappender.length()<9)
+            addSymbol("6");
     }
 
     private void setSeven() {
-        addSymbol("7");
+        if(numberappender.length()<9)
+            addSymbol("7");
     }
 
     private void setEight() {
-        addSymbol("8");
+        if(numberappender.length()<9)
+            addSymbol("8");
     }
 
     private void setNine() {
-        addSymbol("9");
+        if(numberappender.length()<9)
+            addSymbol("9");
     }
     private void setPoint() {
-        addSymbol(".");
+        if(!numberappender.toString().contains(".")){
+            addSymbol(".");
+        }
+        
     }
     
     private void setPi(){
@@ -228,7 +243,16 @@ public class Calculate extends HttpServlet {
     
     
     private void updateResult(){
-        result = numberappender.toString();
+        if(numberappender.toString().contains(".")){
+            if(numberappender.toString().split("\\.").length > 1){
+                if(numberappender.toString().split("\\.")[1].length() > 2){
+                    String temp = String.format("%.2f", Double.parseDouble(numberappender.toString()));
+                    numberappender = new StringBuilder();
+                    numberappender.append(temp);
+                }
+            }
+        }
+                result = numberappender.toString();
     }
     private void updateResult(String ans){
         result = ans;
@@ -264,12 +288,15 @@ public class Calculate extends HttpServlet {
         num2=arr[i+2];
      }
         builder = new StringBuilder();
-//        arr.clear();
-//        arr.add(num1);
         builder.append(num1);
         
      }
          }
-          return String.format("%.2f", Double.parseDouble(num1));
+         num1 = String.format("%.2f", Double.parseDouble(num1));
+         
+         if(num1.split("\\.")[0].length()>9)
+             num1 = "E";
+         
+          return num1;
     }
 }

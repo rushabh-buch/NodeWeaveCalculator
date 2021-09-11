@@ -5,10 +5,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Nodeweave Assessment : Simple Calculator</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Nodeweave Assessment : Simple Calculator</h1>
         <form action="Calculate" method="post">
             <table border="2">
                 <tr>
@@ -25,7 +25,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="2">
+                    <td>
                         <input style="width: 100%" type="submit" name="C" value="C" >
                     </td>
                     <td>
@@ -33,6 +33,9 @@
                     </td>
                     <td>
                         <input style="width: 100%" type="submit" name="Pi" value="Pi" >
+                    </td>
+                    <td>
+                        <input style="width: 100%" type="submit" name="/" value="/" >
                     </td>
                 </tr>
                 
