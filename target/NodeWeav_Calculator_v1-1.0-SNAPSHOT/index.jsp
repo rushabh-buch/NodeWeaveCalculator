@@ -8,6 +8,7 @@
         <title>Nodeweave Assessment : Simple Calculator</title>
     </head>
     <body>
+        <div align="center">
         <h1>Nodeweave Assessment : Simple Calculator</h1>
         <form action="Calculate" method="post">
             <table border="2">
@@ -97,8 +98,18 @@
                     </td>
                 </tr>
             </table>
-            
-            
         </form>
+                    <h3>Instructions</h3>
+                    <ul>
+                        <li><p>This calculator supports 9 digits whole number with 2 decimal place digits</p></li>
+                        <li><p>If you exceed 9 digit whole number, the calculator will do nothing and display will not go beyond 9 digits.</p></li>
+                        <li><p>If you exceed 2 decimal digits, the calculator will display nearest round off to 2 decimal places always.</p></li>
+                        <li><p>You can perform continuous mathematical operations (For Example: 2+4*8-2)</p></li>
+                        <li><p>The last operation button shows what the last calculation you performed. To get the answer of the last operation please hit = button.</p></li>
+                        <li><p>To use the memory function, please make sure you have enabled cookies on your browser.</p></li>
+                        
+                        
+                    </ul>
+      </div>
     </body>
 </html>
