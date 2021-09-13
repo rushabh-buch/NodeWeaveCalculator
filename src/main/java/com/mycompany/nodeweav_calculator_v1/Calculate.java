@@ -17,7 +17,7 @@ import javax.ws.rs.core.Response;
 
 /**
  *
- * @author rrb21
+ * @author Rushabh
  */
 @WebServlet(name = "Calculate", urlPatterns = {"/Calculate"})
 public class Calculate extends HttpServlet {
@@ -115,18 +115,21 @@ public class Calculate extends HttpServlet {
 
     
     private void setZero() {
-        if(numberappender.length()<9)
-            addSymbol("0");
+        if((numberappender.toString().contains(".")) || (numberappender.length()<9)){
+                addSymbol("0");
+        }
     }
 
     private void setOne() {
-        if(numberappender.length()<9)
-            addSymbol("1");
+        if((numberappender.toString().contains(".")) || (numberappender.length()<9)){
+                addSymbol("1");
+        }
     }
 
     private void setTwo() {
-        if(numberappender.length()<9)
-            addSymbol("2");
+        if((numberappender.toString().contains(".")) || (numberappender.length()<9)){
+                addSymbol("2");
+        }
     }
 
     private void setThree() {
@@ -137,33 +140,39 @@ public class Calculate extends HttpServlet {
     }
 
     private void setFour() {
-        if(numberappender.length()<9)
-            addSymbol("4");
+        if((numberappender.toString().contains(".")) || (numberappender.length()<9)){
+                addSymbol("4");
+        }
     }
 
     private void setFive() {
-        if(numberappender.length()<9)
-            addSymbol("5");
+        if((numberappender.toString().contains(".")) || (numberappender.length()<9)){
+                addSymbol("5");
+        }
     }
 
     private void setSix() {
-        if(numberappender.length()<9)
-            addSymbol("6");
+        if((numberappender.toString().contains(".")) || (numberappender.length()<9)){
+                addSymbol("6");
+        }
     }
 
     private void setSeven() {
-        if(numberappender.length()<9)
-            addSymbol("7");
+        if((numberappender.toString().contains(".")) || (numberappender.length()<9)){
+                addSymbol("7");
+        }
     }
 
     private void setEight() {
-        if(numberappender.length()<9)
-            addSymbol("8");
+        if((numberappender.toString().contains(".")) || (numberappender.length()<9)){
+                addSymbol("8");
+        }
     }
 
     private void setNine() {
-        if(numberappender.length()<9)
-            addSymbol("9");
+        if((numberappender.toString().contains(".")) || (numberappender.length()<9)){
+                addSymbol("9");
+        }
     }
     private void setPoint() {
         if(!numberappender.toString().contains(".")){
